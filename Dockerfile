@@ -9,5 +9,5 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:17-alpine
-COPY --from=build /home/app/target/sb-mobile-repair-app-0.0.1-SNAPSHOT-0.0.1-SNAPSHOT.jar /usr/local/lib/sb-mobile-repair-app-0.0.1-SNAPSHOT-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/usr/local/lib/sb-mobile-repair-app-0.0.1-SNAPSHOT-0.0.1-SNAPSHOT.jar"]
+COPY --from=build /home/app/target/sb-mobile-repair-app-0.0.1-SNAPSHOT.jar /usr/local/lib/sb-mobile-repair-app-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/usr/local/lib/sb-mobile-repair-app-0.0.1-SNAPSHOT.jar"]
